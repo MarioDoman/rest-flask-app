@@ -5,9 +5,9 @@ app = Flask(__name__)
 api = Api(app)
 
 PERSONS = {
-    'person1': {'name': 'Mario', 'surname': 'Doman', 'height': 115, 'age': 40},
-    'person2': {'name': 'Palo', 'surname': 'Fritz', 'height': 89, 'age': 25},
-    'person3': {'name': 'Peto', 'surname': 'Hans', 'height': 56, 'age': 17},
+    'person1': {'name': 'Mario', 'surname': 'Doman', 'height': 198, 'age': 40},
+    'person2': {'name': 'Palo', 'surname': 'Fritz', 'height': 189, 'age': 25},
+    'person3': {'name': 'Peto', 'surname': 'Hans', 'height': 176, 'age': 17},
 }
 
 
@@ -32,7 +32,7 @@ class Person(Resource):
     def delete(self, person_id):
         abort_if_person_doesnt_exist(person_id)
         del PERSONS[person_id]
-        return '', 204
+        return 204
 
     def put(self, person_id):
         args = parser.parse_args()
